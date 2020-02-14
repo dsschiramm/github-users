@@ -1,26 +1,42 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { LoaderComponent } from './loader/loader.component';
-import { HeaderComponent } from './header/header.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {
+	FaIconLibrary,
+	FontAwesomeModule
+} from "@fortawesome/angular-fontawesome";
+import { InterceptorProviders } from "./interceptors/import.interceptor";
+import { MaterialModule } from "./material-module";
+import { Icons as icons } from "./app.icons";
+import { AppRoutingModule } from "./app-routing.module";
+import { BriefDescription } from "./utils/brief-description.pipe";
+import { AppComponent } from "./app.component";
+import { UserListComponent } from "./components/user-list/user-list.component";
+import { LoaderComponent } from "./components/loader/loader.component";
+import { HeaderComponent } from "./components/header/header.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserListComponent,
-    LoaderComponent,
-    HeaderComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		UserListComponent,
+		LoaderComponent,
+		HeaderComponent,
+		BriefDescription
+	],
+	imports: [
+		BrowserModule,
+		BrowserAnimationsModule,
+		MaterialModule,
+		HttpClientModule,
+		AppRoutingModule,
+		FontAwesomeModule
+	],
+	providers: [InterceptorProviders],
+	bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+	constructor(library: FaIconLibrary) {
+		library.addIcons(...icons);
+	}
+}
