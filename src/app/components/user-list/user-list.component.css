@@ -1,0 +1,7 @@
+.card-size {
+	width: fit-content;
+	max-width: 200px;
+}
+.card-img {
+	max-height: 160px;
+}

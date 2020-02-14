@@ -1,0 +1,22 @@
+<div class="mx-auto">
+	<div class="row">
+		<div *ngFor="let user of userList" class="col-md-3 col-sm-12">
+			<mat-card class="card-size m-3" [href]="user.reposUrl">
+				<mat-card-header>
+					<fa-icon
+						mat-card-avatar
+						size="2x"
+						[icon]="['fab', 'github']"
+					></fa-icon>
+					<mat-card-title>{{ user.login }}</mat-card-title>
+				</mat-card-header>
+				<img
+					mat-card-image
+					class="card-img"
+					[src]="user.avatarUrl"
+					alt="Avatar"
+				/>
+			</mat-card>
+		</div>
+	</div>
+</div>
