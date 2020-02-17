@@ -19,7 +19,7 @@ export class UserListComponent implements OnInit {
 		});
 	}
 
-	public openRepository(url: string) :void  {
-		window.open(url, "_blank");
+	public openRepository(login: string): void {
+		window.open(this.userService.getRepositoryLink(login), "_blank");
 	}
 }

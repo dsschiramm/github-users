@@ -1,7 +1,10 @@
 <div class="mx-auto">
 	<div class="row">
 		<div *ngFor="let user of userList" class="col-md-3 col-sm-12">
-			<mat-card class="card-size m-3" [href]="user.reposUrl">
+			<mat-card
+				class="mb-3 text-center page-link text-dark"
+				(click)="openRepository(user.login)"
+			>
 				<mat-card-header>
 					<fa-icon
 						mat-card-avatar
@@ -12,7 +15,7 @@
 				</mat-card-header>
 				<img
 					mat-card-image
-					class="card-img"
+					class="rounded img-fluid"
 					[src]="user.avatarUrl"
 					alt="Avatar"
 				/>
