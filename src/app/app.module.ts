@@ -15,6 +15,7 @@ import { AppComponent } from "./app.component";
 import { UserListComponent } from "./components/user-list/user-list.component";
 import { LoaderComponent } from "./components/loader/loader.component";
 import { HeaderComponent } from "./components/header/header.component";
+import { NotificationComponent } from "./components/notification/notification.component";
 
 @NgModule({
 	declarations: [
@@ -22,7 +23,8 @@ import { HeaderComponent } from "./components/header/header.component";
 		UserListComponent,
 		LoaderComponent,
 		HeaderComponent,
-		BriefDescription
+		BriefDescription,
+		NotificationComponent
 	],
 	imports: [
 		BrowserModule,

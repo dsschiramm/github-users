@@ -1,5 +1,11 @@
 import { Injectable } from "@angular/core";
-import { MatSnackBar, MatSnackBarConfig, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition, MatSnackBarRef } from "@angular/material/snack-bar";
+import {
+	MatSnackBar,
+	MatSnackBarConfig,
+	MatSnackBarHorizontalPosition,
+	MatSnackBarVerticalPosition
+} from "@angular/material/snack-bar";
+import { NotificationComponent } from "./../components/notification/notification.component";
 
 @Injectable({
 	providedIn: "root"
@@ -8,25 +14,27 @@ export class NotificationService {
 	constructor(private snackBar: MatSnackBar) {}
 
 	snackBarConfig: MatSnackBarConfig;
-	snackBarRef: MatSnackBarRef<any>;
-	horizontalPosition: MatSnackBarHorizontalPosition = "center";
+	horizontalPosition: MatSnackBarHorizontalPosition = "right";
 	verticalPosition: MatSnackBarVerticalPosition = "top";
 	snackBarAutoHide = "1500";
 
 	public showSuccess(message) {
-		this.snackBarConfig = new MatSnackBarConfig();
-		this.snackBarConfig.horizontalPosition = this.horizontalPosition;
-		this.snackBarConfig.verticalPosition = this.verticalPosition;
-		this.snackBarConfig.duration = parseInt(this.snackBarAutoHide, 0);
-		this.snackBarConfig.panelClass = "text-success";
-		this.snackBarRef = this.snackBar.open(message, "", this.snackBarConfig);
+		this.snackBar.openFromComponent(NotificationComponent, {
+			data: {
+				message: message,
+				class: "alert-success"
+			},
+			duration: parseInt(this.snackBarAutoHide, 0),
+			verticalPosition: this.verticalPosition,
+			horizontalPosition: this.horizontalPosition
+		});
 	}
 
 	public showError(message) {
-		this.snackBarConfig = new MatSnackBarConfig();
-		this.snackBarConfig.horizontalPosition = this.horizontalPosition;
-		this.snackBarConfig.verticalPosition = this.verticalPosition;
-		this.snackBarConfig.panelClass = "text-danger";
-		this.snackBarRef = this.snackBar.open(message, "", this.snackBarConfig);
+		this.snackBar.openFromComponent(NotificationComponent, {
+			data: { message: message, class: "alert-danger" },
+			verticalPosition: this.verticalPosition,
+			horizontalPosition: this.horizontalPosition
+		});
 	}
 }
