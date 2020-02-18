@@ -17,10 +17,10 @@ deploy:
     provider: pages
     skip_cleanup: true
     github_token: "$GITHUB_TOKEN"
-    local_dir: dist/user-list
+    local_dir: dist/github-users
     keep_history: true
     on:
         branch: master
 env:
     global:
-        secure: rNNtOhaxXKKcYoiMCnwtoPpunbbQzj9msTxWtEg+86PAtP9JKiPOYky1Hw7f3grotJQ+5vBtScL6yThjkM7zoySJ8ugCejpktoAPpo0XnKODVKXVav3Nw2puosscI/1iToije+nVrlqkNb+Qr8d9Ur1Jy9UTQQGlgv6Bi9ZD3dTwCEr01ywTF80NRUo9+516Dn8BN6DC++0lCf/YxvHAs08gxasH8IkuOrs4kRTzFJXrVPF6Izx2L5CVbsrkVB9moRmqcusuH8LVovzq0RzSQdspiq+viS1tfVMCgsd8MNE3iInJNJPlcEiXC2lso90snHTtPtLmIkzyhA4lRFGP+iQk/yfR4tT5Cet81C1LnoHVdIq6RudeNlJJ6KRWghLGkAZyRmQOn5/BjGDXnLb8DfngHoX7mB6phWlFSnIae8RgZ032P4jpWgF3eqLvWVT+4vliUVLrIQIDuHc8O9le7BuqdrmAKTaB86bifBRwz2mlbF4bXFQ8qL7mKh5TIXaTkm+bhWnnibzR3VfFvTS2df9S39vEjgMppN7Eq5h8jLuxlqIiT/l6/GfjQ9GhlVirEcpQ66q0dTKKcBhg6XBpNIYHV51feoQ6/FzmoN2p6q4m0UnJVe6UX24X2/F7J70XASsQbMbk50qio+2VfREg2NYa9Is+NmM9W61QOFHicDY=
+        - secure: djdzQBg3yTigMeegZbEj+MGteotBgw1OjhAlaXv1FPt7+iizAOkgeQ3uRNxSpZxIat7/ezWXSJ0pXYxwwpKXzJk13jzmIxbmI4PWu1JKMEy1kstIzJvkmRacdHwjJxOqeY6e5fVjliytanMnDGOK/9t5VlK7/XbGxpe87OI6/6r27nwzXDHZtYBchSJvhD4TVF/RvAx8XpyCsEVNvG8vxMqZ4TltkDwxm+30xLyuZh07Wtke/3GPBp2/PE3LOwK9PaqldGN8UvbP5iRORiPnfIZbXJPLX70enWmu36uz57ylFQloOWElWr3KAgN/EHwcbkor8B0ZCiFQmI9IMPfAkQR6ze6kzZfw9BCePvj+SyneTkJgtnvOF08F3RyehIj02WjpR+yIitw/pR30kTklrh5UyRTXicIYxMBJs9sTUE4vM5V7igNRcub2epIVxgVTRQ+g/FpkcSWS4pZw4a2vkGDiSTr81NmV6vvZKn4hbDSS1//7CSythJh3XG7/LeVeyKOhEaGNs5vXzpjSWWkrc1A3qK2UccFExRZ39bUU0NOwipL9ilGRnxCWtHuQuY4et8hCdm21cYWukY2gGw6eZikyutoWvPIEsZBJqw+g1WDEJzQfQjf0+9/5US8jW7Zyr4F7zALtIP9G6ok4/GCWd9OiZDofTd7SsG+ZWq2XCu8=
