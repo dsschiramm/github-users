@@ -1,16 +1,13 @@
-<div class="alert" [ngClass]="data.class">
-	<div class="container">
-		<div class="alert-icon">
-			<i class="material-icons">check</i>
-		</div>
-		<button
-			(click)="dismiss()"
-			type="button"
-			class="close"
-			data-dismiss="alert"
-		>
-			<span aria-hidden="true"><i class="material-icons">clear</i></span>
-		</button>
-		{{ data.message }}
-	</div>
+<div [ngClass]="data.class" class="alert " role="alert">
+	{{ data.message }}
+
+	<a
+		(click)="dismiss()"
+		type="button"
+		class="pull-right close"
+		data-dismiss="alert"
+		aria-label="Close"
+	>
+		<span aria-hidden="true">&times;</span>
+	</a>
 </div>

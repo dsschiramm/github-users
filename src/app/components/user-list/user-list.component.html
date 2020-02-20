@@ -1,8 +1,8 @@
-<div class="mx-auto">
-	<div class="row">
-		<div *ngFor="let user of userList" class="col-md-3 col-sm-12">
+<div class="main-raised p-3">
+	<div class="row text-center text-lg-left">
+		<div *ngFor="let user of userList" class="col-lg-2 col-md-4 col-6">
 			<mat-card
-				class="mb-3 text-center page-link text-dark"
+				class="mat-card mb-3 text-center"
 				(click)="openRepository(user.login)"
 			>
 				<mat-card-header>
@@ -10,8 +10,12 @@
 						mat-card-avatar
 						size="2x"
 						[icon]="['fab', 'github']"
-					></fa-icon>
-					<mat-card-title>{{ user.login }}</mat-card-title>
+					>
+					</fa-icon>
+
+					<mat-card-title class="text-dark">
+						{{ user.login }}
+					</mat-card-title>
 				</mat-card-header>
 				<img
 					mat-card-image

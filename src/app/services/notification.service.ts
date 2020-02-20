@@ -22,7 +22,7 @@ export class NotificationService {
 		this.snackBar.openFromComponent(NotificationComponent, {
 			data: {
 				message: message,
-				class: "alert-success"
+				class: "alert-primary"
 			},
 			duration: parseInt(this.snackBarAutoHide, 0),
 			verticalPosition: this.verticalPosition,
