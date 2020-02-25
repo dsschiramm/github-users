@@ -1,6 +1,6 @@
 <div class="main-raised p-3">
 	<div class="row text-center text-lg-left">
-		<div *ngFor="let user of userList" class="col-lg-2 col-md-4 col-6">
+		<div *ngFor="let user of userList" class="col-lg-2 col-md-4 col-sm-1">
 			<mat-card
 				class="mat-card mb-3 text-center"
 				(click)="openRepository(user.login)"
@@ -17,6 +17,7 @@
 						{{ user.login }}
 					</mat-card-title>
 				</mat-card-header>
+
 				<img
 					mat-card-image
 					class="rounded img-fluid"

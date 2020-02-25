@@ -2,15 +2,24 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
+// Modules
+import { AppRoutingModule } from "./app-routing.module";
+import { MaterialModule } from "./material-module";
 import {
 	FaIconLibrary,
 	FontAwesomeModule
 } from "@fortawesome/angular-fontawesome";
-import { InterceptorProviders } from "./interceptors/import.interceptor";
-import { MaterialModule } from "./material-module";
 import { Icons as icons } from "./app.icons";
-import { AppRoutingModule } from "./app-routing.module";
+
+// Services and Interceptors
+import { InterceptorProviders } from "./interceptors/import.interceptor";
+import { UserService } from "./services/user.service";
+
+// Pipe
 import { BriefDescription } from "./utils/brief-description.pipe";
+
+// Components
 import { AppComponent } from "./app.component";
 import { UserListComponent } from "./components/user-list/user-list.component";
 import { LoaderComponent } from "./components/loader/loader.component";
@@ -34,7 +43,7 @@ import { NotificationComponent } from "./components/notification/notification.co
 		AppRoutingModule,
 		FontAwesomeModule
 	],
-	providers: [InterceptorProviders],
+	providers: [InterceptorProviders, UserService],
 	bootstrap: [AppComponent]
 })
 export class AppModule {
