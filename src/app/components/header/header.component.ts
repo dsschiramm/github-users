@@ -12,8 +12,6 @@ export class HeaderComponent {
 	public getUser(event: KeyboardEvent) {
 		const login: string = (event.target as HTMLInputElement).value;
 
-		if (login.trim().length >= 5) {
-			this.userService.searchUser(login);
-		}
+		this.userService.searchUser(login.trim());
 	}
 }

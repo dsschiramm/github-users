@@ -1,0 +1,20 @@
+<mat-card
+	class="mat-card mb-3 text-center"
+	(click)="openRepository(user.login)"
+>
+	<mat-card-header>
+		<fa-icon mat-card-avatar size="2x" [icon]="['fab', 'github']">
+		</fa-icon>
+
+		<mat-card-title class="text-dark">
+			{{ user.login }}
+		</mat-card-title>
+	</mat-card-header>
+
+	<img
+		mat-card-image
+		class="rounded img-fluid"
+		[src]="user.avatarUrl"
+		alt="Avatar"
+	/>
+</mat-card>

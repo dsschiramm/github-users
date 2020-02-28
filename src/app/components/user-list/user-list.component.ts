@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { UserService } from "../../services/user.service";
 import { User } from "../../interfaces/user";
 
@@ -15,10 +15,6 @@ export class UserListComponent implements OnInit {
 	ngOnInit() {
 		this.userService.getUserList(0).subscribe((userList: User[]) => {
 			this.userList = userList;
-		});
-
-		this.userService.getUserSearched().subscribe((user: User) => {
-			this.userList = [user];
 		});
 	}
 

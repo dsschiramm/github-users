@@ -1,9 +1,7 @@
-<div *ngIf="flShow" class="container h-100">
-	<div class="row h-100 justify-content-center align-items-center">
-		<mat-spinner
-			[color]="color"
-			[mode]="mode"
-			[value]="value"
-		></mat-spinner>
-	</div>
+<div
+	*ngIf="flShow"
+	class="d-flex justify-content-center position-fixed custom-loader"
+>
+	<div class="block-area"></div>
+	<mat-spinner [color]="color" [mode]="mode" [value]="value"></mat-spinner>
 </div>
