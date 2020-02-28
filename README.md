@@ -1,6 +1,6 @@
 # GithubUsers
 
-Application Link: https://dsschiramm.github.io/user-list/
+Application Link: https://dsschiramm.github.io/github-users/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
 
