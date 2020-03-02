@@ -46,67 +46,7 @@ export class RequestInterceptor implements HttpInterceptor {
 			});
 		}
 
-		// if (!request.headers.has("User-Agent")) {
-		// 	request = request.clone({
-		// 		headers: request.headers.set("User-Agent", "github-users")
-		// 	});
-		// }
-
-		// if (!request.headers.has("login")) {
-		// 	request = request.clone({
-		// 		headers: request.headers.set("login", "dsschiramm")
-		// 	});
-		// }
-
-		// if (!request.headers.has("Cache-Control")) {
-		// 	request = request.clone({
-		// 		headers: request.headers.set(
-		// 			"Cache-Control",
-		// 			"public, max-age=31536000"
-		// 		)
-		// 	});
-		// }
-
-		// if (!request.headers.has("Authorization")) {
-		// 	const token: string = localStorage.getItem("token");
-
-		// 	if (token) {
-		// 		request = request.clone({
-		// 			headers: request.headers.set(
-		// 				"Authorization",
-		// 				"Bearer " + token
-		// 			)
-		// 		});
-		// 	}
-		// }
-
-		// if (!request.headers.has("Access-Control-Allow-Origin")) {
-		// 	request = request.clone({
-		// 		headers: request.headers.set("Access-Control-Allow-Origin", "*")
-		// 	});
-		// }
-
-		// if (!request.headers.has("Access-Control-Allow-Methods")) {
-		// 	request = request.clone({
-		// 		headers: request.headers.set(
-		// 			"Access-Control-Allow-Methods",
-		// 			"GET,PUT,POST,DELETE"
-		// 		)
-		// 	});
-		// }
-
-		// if (!request.headers.has("Access-Control-Allow-Headers")) {
-		// 	request = request.clone({
-		// 		headers: request.headers.set(
-		// 			"Access-Control-Allow-Headers",
-		// 			"Content-Type"
-		// 		)
-		// 	});
-		// }
-
 		request = request.clone({ url: this.formUrl(request.url) });
-
-		console.log(request);
 
 		return next.handle(request).pipe(
 			retry(3),

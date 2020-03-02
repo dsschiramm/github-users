@@ -1,20 +1,38 @@
-<mat-card
-	class="mat-card mb-3 text-center"
-	(click)="openRepository(user.login)"
->
-	<mat-card-header>
-		<fa-icon mat-card-avatar size="2x" [icon]="['fab', 'github']">
-		</fa-icon>
+<div class="row">
+	<div class="col-md-4 col-sm-12">
+		<ng-container *ngIf="user.avatarUrl">
+			<mat-card
+				class="mat-card mb-3 text-center"
+				(click)="openRepository(user.login)"
+			>
+				<mat-card-header>
+					<fa-icon
+						mat-card-avatar
+						size="2x"
+						[icon]="['fab', 'github']"
+					>
+					</fa-icon>
 
-		<mat-card-title class="text-dark">
-			{{ user.login }}
-		</mat-card-title>
-	</mat-card-header>
+					<mat-card-title class="mat-card-title text-dark">
+						{{ user.login }}
+					</mat-card-title>
+				</mat-card-header>
 
-	<img
-		mat-card-image
-		class="rounded img-fluid"
-		[src]="user.avatarUrl"
-		alt="Avatar"
-	/>
-</mat-card>
+				<img
+					mat-card-image
+					class="rounded img-fluid"
+					[src]="user.avatarUrl"
+					alt="Avatar"
+				/>
+
+				<mat-card-content *ngIf="user.name">
+					<p>{{ user.name }}</p>
+					<p *ngIf="user.location">Location: {{ user.location }}</p>
+					<p *ngIf="user.biography">
+						Biography: {{ user.biography }}
+					</p>
+				</mat-card-content>
+			</mat-card>
+		</ng-container>
+	</div>
+</div>
