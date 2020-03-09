@@ -1,5 +1,5 @@
-import { OnDestroy } from "@angular/core";
-import { Subject } from "rxjs";
+import { OnDestroy } from '@angular/core';
+import { Subject } from 'rxjs';
 
 export abstract class BaseComponent implements OnDestroy {
 	protected destroyed$: Subject<boolean> = new Subject();
