@@ -1,33 +1,22 @@
 <div class="row">
-	<div
-		*ngFor="let user of userList"
-		class="col-xl-2 col-lg-3 col-md-6 col-sm-12"
-	>
-		<ng-container *ngIf="user.avatarUrl">
-			<mat-card
-				class="mat-card mb-3 text-center"
-				(click)="openRepository(user.login)"
-			>
-				<mat-card-header>
-					<fa-icon
-						mat-card-avatar
-						size="2x"
-						[icon]="['fab', 'github']"
-					>
-					</fa-icon>
+	<div *ngFor="let user of userList" class="col-xl-2 col-lg-3 col-md-6 col-sm-12">
+		<mat-card class="mat-card mb-3 text-center" (click)="openRepository(user.login)">
+			<mat-card-header>
+				<fa-icon mat-card-avatar size="2x" [icon]="['fab', 'github']"> </fa-icon>
 
-					<mat-card-title class="mat-card-title text-dark">
-						{{ user.login | briefDescription: 20 }}
-					</mat-card-title>
-				</mat-card-header>
+				<mat-card-title class="mat-card-title text-dark">
+					{{ user.login | briefDescription: 20 }}
+				</mat-card-title>
+			</mat-card-header>
 
-				<img
-					mat-card-image
-					class="rounded img-fluid"
-					[src]="user.avatarUrl"
-					alt="Avatar"
-				/>
-			</mat-card>
-		</ng-container>
+			<img
+				mat-card-image
+				[defaultImage]="defaultImage"
+				[lazyLoad]="user.avatarUrl"
+				[useSrcset]="true"
+				class="rounded img-fluid"
+				alt="Avatar"
+			/>
+		</mat-card>
 	</div>
 </div>

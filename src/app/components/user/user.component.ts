@@ -1,24 +1,22 @@
-import { Component, OnInit } from "@angular/core";
-import { UserService } from "../../services/user.service";
-import { User } from "../../interfaces/user";
-import { ActivatedRoute } from "@angular/router";
-import { BaseComponent } from "../base.component";
-import { takeUntil } from "rxjs/operators";
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../services/user.service';
+import { User } from '../../interfaces/user';
+import { ActivatedRoute } from '@angular/router';
+import { BaseComponent } from '../base.component';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
-	selector: "app-user",
-	templateUrl: "./user.component.html",
-	styleUrls: ["./user.component.css"]
+	selector: 'app-user',
+	templateUrl: './user.component.html',
+	styleUrls: ['./user.component.css'],
 })
 export class UserComponent extends BaseComponent implements OnInit {
-	constructor(
-		private userService: UserService,
-		private route: ActivatedRoute
-	) {
+	constructor(private userService: UserService, private route: ActivatedRoute) {
 		super();
 	}
 
 	public user: User;
+	public defaultImage = '/assets/images/defaultImageUser.png';
 
 	ngOnInit(): void {
 		this.route.params.pipe(takeUntil(this.destroyed$)).subscribe(params => {
@@ -34,6 +32,6 @@ export class UserComponent extends BaseComponent implements OnInit {
 	}
 
 	public openRepository(login: string): void {
-		window.open(this.userService.getRepositoryLink(login), "_blank");
+		window.open(this.userService.getRepositoryLink(login), '_blank');
 	}
 }
