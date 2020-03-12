@@ -20,3 +20,16 @@
 	margin-left: -0.5rem;
 	padding-top: 0.2rem;
 }
+
+img.ng-lazyloaded {
+	animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

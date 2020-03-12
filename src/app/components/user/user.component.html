@@ -1,9 +1,8 @@
-<div class="row">
-	<div class="col-md-3 col-sm-12">
+<div class="row h-100">
+	<div class="col-md-3 col-sm-12 overflow-hidden">
 		<mat-card class="mat-card mb-3 text-center">
 			<mat-card-header>
 				<fa-icon
-					[classes]="['stretched-link']"
 					(click)="openRepository(user.login)"
 					mat-card-avatar
 					size="2x"
@@ -40,5 +39,9 @@
 				<p *ngIf="user.biography">Biography: {{ user.biography }}</p>
 			</mat-card-content>
 		</mat-card>
+	</div>
+
+	<div *ngIf="user.login" class="col-md-9 col-sm-12 overflow-auto h-100">
+		<app-user-repository [login]="user.login"></app-user-repository>
 	</div>
 </div>

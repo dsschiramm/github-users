@@ -1,0 +1,23 @@
+<!-- <div class="row overflow-auto"> -->
+<!--
+	<div *ngFor="let repository of repositoryList" class="col-xl-1 col-lg-2 col-md-3 col-sm-6">
+		<mat-card class="mat-card mb-3 text-center">
+			<mat-card-header>
+				<fa-icon mat-card-avatar size="2x" [icon]="['fab', 'github']"> </fa-icon>
+
+				<mat-card-title class="mat-card-title text-dark">
+					{{ user.login | briefDescription: 20 }}
+				</mat-card-title>
+			</mat-card-header>
+
+		</mat-card>
+	 </div>
+	 -->
+
+<mat-list>
+	<div mat-list-item *ngFor="let repository of repositoryList">
+		<h4 mat-line> {{ repository.name }}</h4>
+		<p mat-line>{{ repository.description }}</p>
+	</div>
+</mat-list>
+<!-- </div> -->

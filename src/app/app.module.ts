@@ -24,6 +24,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { UserComponent } from './components/user/user.component';
+import { UserRepositoryComponent } from './components/user-repository/user-repository.component';
 
 @NgModule({
 	declarations: [
@@ -34,6 +35,7 @@ import { UserComponent } from './components/user/user.component';
 		BriefDescription,
 		NotificationComponent,
 		UserComponent,
+		UserRepositoryComponent,
 	],
 	imports: [
 		BrowserModule,
