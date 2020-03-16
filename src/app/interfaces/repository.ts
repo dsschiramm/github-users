@@ -6,7 +6,7 @@ export interface Repository {
 	html_url: string;
 	description: string;
 	languages_url: string;
-	pushed_at: string;
+	updatedAt: string;
 	homepage: string;
 	languages: string;
 }
@@ -20,7 +20,7 @@ export function buildRepository(): Repository {
 		html_url: '',
 		description: '',
 		languages_url: '',
-		pushed_at: '',
+		updatedAt: '',
 		homepage: '',
 		languages: '',
 	};

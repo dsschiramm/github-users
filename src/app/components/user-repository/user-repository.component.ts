@@ -19,12 +19,6 @@ export class UserRepositoryComponent extends BaseComponent implements OnInit {
 	public repositoryList: Repository[];
 
 	ngOnInit(): void {
-		// this.route.params.pipe(takeUntil(this.destroyed$)).subscribe(params => {
-		// 	this.userService.getUserRepositories(params.id);
-		// });
-		console.log('nginit');
-		console.log(this.login);
-
 		this.userService.getUserRepositories(this.login).subscribe((repositoryList: Repository[]) => {
 			console.log(repositoryList);
 			this.repositoryList = repositoryList;
