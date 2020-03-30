@@ -1,47 +1,48 @@
 <div class="row h-100">
-	<div class="col-md-3 col-sm-12 overflow-hidden">
+	<div class="col-md-3 col-sm-12">
 		<mat-card class="mat-card mb-3 text-center">
 			<mat-card-header>
 				<fa-icon
-					(click)="openRepository(user.login)"
+					(click)="openUserProfile(user.login)"
 					mat-card-avatar
 					size="2x"
 					[spin]="true"
 					[icon]="['fab', 'github']"
-					href=""
+					class="router-link"
 				>
 				</fa-icon>
 
-				<mat-card-title class="mat-card-title text-dark">
+				<mat-card-title class="mat-card-title text-dark router-link" (click)="openUserProfile(user.login)">
 					{{ user.login }}
 				</mat-card-title>
 			</mat-card-header>
 
 			<img
+				(click)="openUserProfile(user.login)"
 				mat-card-image
 				[defaultImage]="defaultImage"
 				[errorImage]="defaultImage"
 				[lazyLoad]="user.avatarUrl"
-				class="rounded img-fluid"
+				class="rounded img-fluid router-link"
 				alt="Avatar"
 			/>
 
 			<mat-card-content *ngIf="user.name" class="text-left">
-				<h4 class="font-weight-bold">{{ user.name }}</h4>
+				<h4 class="font-weight-bold router-link" (click)="openUserProfile(user.login)">{{ user.name }}</h4>
 				<p *ngIf="user.location">
 					<fa-icon mat-card-avatar [icon]="['fas', 'map-marker-alt']" [classes]="['mr-1']"></fa-icon>
 					<span>{{ user.location }}</span>
 				</p>
 				<p *ngIf="user.blog">
 					<fa-icon mat-card-avatar [icon]="['fas', 'link']" [classes]="['mr-1']"></fa-icon>
-					<span>{{ user.blog }}</span>
+					<a class="router-link" (click)="openBlog(user.blog)">{{ user.blog }}</a>
 				</p>
 				<p *ngIf="user.biography">Biography: {{ user.biography }}</p>
 			</mat-card-content>
 		</mat-card>
 	</div>
 
-	<div *ngIf="user.login" class="col-md-9 col-sm-12 overflow-auto h-100">
+	<div *ngIf="user.login" class="col-md-9 col-sm-12">
 		<app-user-repository [login]="user.login"></app-user-repository>
 	</div>
 </div>

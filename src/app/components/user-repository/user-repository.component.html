@@ -1,11 +1,11 @@
 <div class="row">
-	<div class="col-md-6 col-sm-12 overflow-hidden">
-		OK
-	</div>
-
-	<div class="col-md-6 col-sm-12 overflow-auto h-100">
+	<div class="col-md-6 col-sm-12 overflow-auto vh-85">
 		<div class="list-group">
-			<div class="list-group-item" *ngFor="let repository of repositoryList">
+			<div
+				class="list-group-item router-link"
+				*ngFor="let repository of repositoryList"
+				(click)="openRepository(repository.htmlUrl)"
+			>
 				<div class="d-flex w-100 justify-content-between">
 					<h5 class="mb-1">{{ repository.name }}</h5>
 					<small>Last Update: {{ repository.updatedAt | date: 'dd/MM/yyyy' }}</small>
@@ -13,5 +13,21 @@
 				<p class="mb-1">{{ repository.description }}</p>
 			</div>
 		</div>
+	</div>
+
+	<div class="col-md-6 col-sm-12 p-5">
+		<ngx-charts-bar-horizontal
+			[view]="view"
+			[scheme]="colorScheme"
+			[results]="languageList"
+			[gradient]="gradient"
+			[xAxis]="showXAxis"
+			[yAxis]="showYAxis"
+			[showXAxisLabel]="showXAxisLabel"
+			[showYAxisLabel]="showYAxisLabel"
+			[xAxisLabel]="xAxisLabel"
+			[yAxisLabel]="yAxisLabel"
+		>
+		</ngx-charts-bar-horizontal>
 	</div>
 </div>

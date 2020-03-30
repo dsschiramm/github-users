@@ -31,7 +31,11 @@ export class UserComponent extends BaseComponent implements OnInit {
 			});
 	}
 
-	public openRepository(login: string): void {
+	public openUserProfile(login: string): void {
 		window.open(this.userService.getRepositoryLink(login), '_blank');
+	}
+
+	public openBlog(blogUrl: string): void {
+		window.open(blogUrl, '_blank');
 	}
 }

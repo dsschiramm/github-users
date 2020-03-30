@@ -9,10 +9,13 @@ import { MaterialModule } from './material-module';
 import { LazyLoadImageModule, scrollPreset } from 'ng-lazyload-image'; // <-- import it
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Icons as icons } from './app.icons';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 // Services and Interceptors
 import { InterceptorProviders } from './interceptors/import.interceptor';
 import { UserService } from './services/user.service';
+import { NotificationService } from './services/notification.service';
+import { LoaderService } from './services/loader.service';
 
 // Pipe
 import { BriefDescription } from './utils/brief-description.pipe';
@@ -44,11 +47,12 @@ import { UserRepositoryComponent } from './components/user-repository/user-repos
 		HttpClientModule,
 		AppRoutingModule,
 		FontAwesomeModule,
+		NgxChartsModule,
 		LazyLoadImageModule.forRoot({
 			preset: scrollPreset, // <-- tell LazyLoadImage that you want to use scrollPreset
 		}),
 	],
-	providers: [InterceptorProviders, UserService],
+	providers: [InterceptorProviders, UserService, NotificationService, LoaderService],
 	bootstrap: [AppComponent],
 })
 export class AppModule {

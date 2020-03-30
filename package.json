@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"scripts": {
 		"ng": "ng",
-		"start": "ng serve",
+		"start": "ng serve --no-live-reload",
 		"build": "ng build --prod --base-href 'https://dsschiramm.github.io/github-users/' --source-map --build-optimizer",
 		"lint": "ng lint"
 	},
@@ -24,6 +24,7 @@
 		"@fortawesome/free-brands-svg-icons": "^5.12.1",
 		"@fortawesome/free-regular-svg-icons": "^5.12.1",
 		"@fortawesome/free-solid-svg-icons": "^5.12.1",
+		"@swimlane/ngx-charts": "^13.0.2",
 		"bootstrap": "^4.4.1",
 		"intersection-observer": "^0.7.0",
 		"ng-lazyload-image": "^7.1.0",

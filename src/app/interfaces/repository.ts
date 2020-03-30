@@ -3,12 +3,12 @@ export interface Repository {
 	name: string;
 	url: string;
 	private: string;
-	html_url: string;
+	htmlUrl: string;
 	description: string;
-	languages_url: string;
+	languagesUrl: string;
 	updatedAt: string;
 	homepage: string;
-	languages: string;
+	language: string;
 }
 
 export function buildRepository(): Repository {
@@ -17,11 +17,11 @@ export function buildRepository(): Repository {
 		name: '',
 		url: '',
 		private: '',
-		html_url: '',
+		htmlUrl: '',
 		description: '',
-		languages_url: '',
+		languagesUrl: '',
 		updatedAt: '',
 		homepage: '',
-		languages: '',
+		language: '',
 	};
 }
