@@ -25,9 +25,9 @@ export class UserService {
 	}
 
 	public searchUser(login: string): void {
-		if (login.length < 5 && this.router.url !== '/user') {
+		if (login.length < 4 && this.router.url !== '/user') {
 			this.router.navigate(['/user']);
-		} else if (login.length >= 5) {
+		} else if (login.length >= 4) {
 			this.http.get<User>(`users/${login}`).subscribe((user: User) => {
 				if (user) {
 					this.userSearched.next(user);
