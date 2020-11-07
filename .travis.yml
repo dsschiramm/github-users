@@ -16,11 +16,11 @@ script:
 deploy:
     provider: pages
     skip_cleanup: true
-    github_token: "$GITHUB_TOKEN"
+    github_token: '$GITHUB_TOKEN'
     local_dir: dist/github-users
     keep_history: true
     on:
         branch: master
 env:
     global:
-        - secure: djdzQBg3yTigMeegZbEj+MGteotBgw1OjhAlaXv1FPt7+iizAOkgeQ3uRNxSpZxIat7/ezWXSJ0pXYxwwpKXzJk13jzmIxbmI4PWu1JKMEy1kstIzJvkmRacdHwjJxOqeY6e5fVjliytanMnDGOK/9t5VlK7/XbGxpe87OI6/6r27nwzXDHZtYBchSJvhD4TVF/RvAx8XpyCsEVNvG8vxMqZ4TltkDwxm+30xLyuZh07Wtke/3GPBp2/PE3LOwK9PaqldGN8UvbP5iRORiPnfIZbXJPLX70enWmu36uz57ylFQloOWElWr3KAgN/EHwcbkor8B0ZCiFQmI9IMPfAkQR6ze6kzZfw9BCePvj+SyneTkJgtnvOF08F3RyehIj02WjpR+yIitw/pR30kTklrh5UyRTXicIYxMBJs9sTUE4vM5V7igNRcub2epIVxgVTRQ+g/FpkcSWS4pZw4a2vkGDiSTr81NmV6vvZKn4hbDSS1//7CSythJh3XG7/LeVeyKOhEaGNs5vXzpjSWWkrc1A3qK2UccFExRZ39bUU0NOwipL9ilGRnxCWtHuQuY4et8hCdm21cYWukY2gGw6eZikyutoWvPIEsZBJqw+g1WDEJzQfQjf0+9/5US8jW7Zyr4F7zALtIP9G6ok4/GCWd9OiZDofTd7SsG+ZWq2XCu8=
+        - secure: Fu5wFkIKF6iRHmzn4OboQ4YLyXQWZKbf9x08avUfQISyoSwvDGURs/kemervI1qQbC5pxNJ8DgIX9LAhVVBydyRBDmdUldvDzw051zawFyR30KhVHZPNFRrYhYFJB4yMu+C26hQKe7/M6Q8xaQCob04bDDhjEOgWLSeFLchukHclVBWa2dRcjvu/71fKmEvgyK8nacxpf9DPlNhhNKyj9f2V56X8CL1PLACPIsBTr4U96gwkqNfV0LzWd7Q+tVUl5oTC6v0ZabRaR42oAm9SA/zoL6/gz8DvQDlMeJHkJC8ERpITd6knPQMqUweM+X56Rz47CCP1jjEvpmWGI2v5MmyrZEEz3USub51KiDBuLmkB4lSvF9vrCNx+r3yEZj0xIft3J9zMrC09SxoLgkJy3lTxI3bKpH0Y1wm9Ut9HdBsFktqugjneugkLXJY15m5IVi82gnJF+vsV09jlVmEnFMkooE763E5tGbg+SX/xeQlzwLJDPBf9E3GS5KKn9fQCHdmQjsmim7UMotRB91gFnB4ubWDN9b1yO5dkFLsLwMkfMkyVgpKCnmQHlnjvAd6C0hdmjkWs5MuDm8Bl2JH7PraU4e8qL2nl7/iRatXvUewftxXQGxZkBoonoz/o6jncMjYtgOzg569UffZX4E5KLGVL+eS8SrqgWsRdwuJjHsU=
