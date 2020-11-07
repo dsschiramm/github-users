@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Modules
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material-module';
-import { LazyLoadImageModule, scrollPreset } from 'ng-lazyload-image'; // <-- import it
+import { LazyLoadImageModule } from 'ng-lazyload-image'; // <-- import it
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Icons as icons } from './app.icons';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -48,9 +48,7 @@ import { UserRepositoryComponent } from './components/user-repository/user-repos
 		AppRoutingModule,
 		FontAwesomeModule,
 		NgxChartsModule,
-		LazyLoadImageModule.forRoot({
-			preset: scrollPreset, // <-- tell LazyLoadImage that you want to use scrollPreset
-		}),
+		LazyLoadImageModule,
 	],
 	providers: [InterceptorProviders, UserService, NotificationService, LoaderService],
 	bootstrap: [AppComponent],
