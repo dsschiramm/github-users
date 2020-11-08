@@ -5,12 +5,13 @@ import { User, buildUser } from '../interfaces/user';
 import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
 import { Repository } from '../interfaces/repository';
+import { NotificationService } from './notification.service';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class UserService {
-	constructor(private http: HttpClient, private router: Router) {}
+	constructor(private http: HttpClient, private router: Router, private notificationService: NotificationService) {}
 
 	private userSearched = new BehaviorSubject<User>(buildUser());
 
@@ -25,21 +26,18 @@ export class UserService {
 	}
 
 	public searchUser(login: string): void {
-		if (login.length < 4 && this.router.url !== '/user') {
-			this.router.navigate(['/user']);
-		} else if (login.length >= 4) {
-			this.http.get<User>(`users/${login}`).subscribe((user: User) => {
-				if (user) {
-					this.userSearched.next(user);
+		this.http.get<User>(`users/${login}`).subscribe(
+			(user: User) => {
+				this.userSearched.next(user);
+				this.notificationService.showSuccess('Usuário encontrado.');
+				const url = `/user/${user.login}`;
 
-					if (!this.router.url.includes('/user/')) {
-						this.router.navigate([`/user/${user.login}`]);
-					}
-				} else {
-					console.log('USUARIO NAO ENCONTRADO');
+				if (!this.router.url.includes(url)) {
+					this.router.navigate([url]);
 				}
-			});
-		}
+			},
+			() => this.notificationService.showError('Usuário não encontrado.')
+		);
 	}
 
 	public getUserSearched(): Observable<User> {
