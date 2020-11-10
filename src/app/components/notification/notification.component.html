@@ -1,13 +1,9 @@
-<div [ngClass]="data.class" class="alert " role="alert">
-	{{ data.message }}
+<div [ngClass]="data.class" class="alert new2 p-4" (click)="dismiss()">
+	<fa-icon *ngIf="!data.hasError" [styles]="{ color: 'green' }" [icon]="['fas', 'check-circle']"> </fa-icon>
+	<fa-icon *ngIf="data.hasError" [styles]="{ color: 'red' }" [icon]="['fas', 'exclamation-triangle']"> </fa-icon>
 
-	<a
-		(click)="dismiss()"
-		type="button"
-		class="pull-right close"
-		data-dismiss="alert"
-		aria-label="Close"
-	>
-		<span aria-hidden="true">&times;</span>
-	</a>
+	<span class="alert-body">
+		<h6 class="alert-header">{{ data.title }}</h6>
+		<p class="mb-0">{{ data.message }}</p>
+	</span>
 </div>

@@ -16,13 +16,15 @@ export class NotificationService {
 	snackBarConfig: MatSnackBarConfig;
 	horizontalPosition: MatSnackBarHorizontalPosition = 'right';
 	verticalPosition: MatSnackBarVerticalPosition = 'top';
-	snackBarAutoHide = '1500';
+	snackBarAutoHide = '2000';
 
 	public showSuccess(message) {
 		this.snackBar.openFromComponent(NotificationComponent, {
 			data: {
+				title: 'Success',
 				message: message,
-				class: 'alert-primary',
+				class: 'alert-success',
+				hasError: false,
 			},
 			duration: parseInt(this.snackBarAutoHide, 0),
 			verticalPosition: this.verticalPosition,
@@ -32,7 +34,12 @@ export class NotificationService {
 
 	public showError(message) {
 		this.snackBar.openFromComponent(NotificationComponent, {
-			data: { message: message, class: 'alert-danger' },
+			data: {
+				title: 'Error',
+				message: message,
+				class: 'alert-danger',
+				hasError: true,
+			},
 			verticalPosition: this.verticalPosition,
 			horizontalPosition: this.horizontalPosition,
 		});
