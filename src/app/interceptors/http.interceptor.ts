@@ -48,17 +48,18 @@ export class RequestInterceptor implements HttpInterceptor {
 		if (error.error instanceof ErrorEvent) {
 			console.log('this is client side error');
 			console.log(`Error: ${error.error.message}`);
+			this.notificationService.showError('An error occurred while making the request.');
 		} else {
 			console.log('this is server side error');
 			console.log(`Error Code: ${error.status},  Message: ${error.message}`);
 
 			switch (error.status) {
-				case 401: //login
-					this.notificationService.showError('É necessário logar para acessar o resto do conteúdo.');
+				case 401: //credentials
+					this.notificationService.showError('You must log in to access the rest of the content.');
 					break;
 				case 403: //forbidden
 					this.notificationService.showError(
-						'Infelizmente o limite de acesso a API do Github foi atingido, tente novamente em alguns minutos.'
+						'Unfortunately the access limit to the Github API has been reached, try again in a few minutes.'
 					);
 					break;
 				default:
